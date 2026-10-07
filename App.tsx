@@ -1,20 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Appbar, MD3LightTheme, PaperProvider } from 'react-native-paper';
+
+import GitExplorer from './GitExplorer';
 
 export default function App() {
+
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <PaperProvider theme={MD3LightTheme}>
+      <Appbar.Header elevated>
+        <Appbar.Content title="GitExplorer" />
+      </Appbar.Header>
+      <GitExplorer />
       <StatusBar style="auto" />
-    </View>
+    </PaperProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 150,
   },
 });
